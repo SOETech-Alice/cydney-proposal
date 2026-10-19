@@ -633,21 +633,26 @@
         <!-- Signature mockup: near-identical recreation of the original site style — alcohol-ink hero, warm linen body, accordion signature device -->
         <div class="p-0">
           <style>
-            @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Source+Sans+Pro:wght@400;600&family=Nunito:wght@600&display=swap');
-            #sigMock .sig-hero{position:relative;height:440px;background-image:url('cyd_hero.jpg');background-size:cover;background-position:62% center;background-repeat:no-repeat;border-bottom:1px solid rgba(0,99,99,.25)}
-            #sigMock .sig-hero-panel{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:fit-content;max-width:86%;padding:26px 34px;background:rgba(237,230,218,.72);backdrop-filter:blur(6px) saturate(1.05);-webkit-backdrop-filter:blur(6px) saturate(1.05);border:1px solid rgba(255,255,255,.35);border-radius:28px;text-align:center}
-            #sigMock .sig-hero-title{font-family:'Quicksand',sans-serif;font-weight:600;font-size:clamp(34px,5vw,46px);letter-spacing:.22em;text-indent:.11em;color:#143040;white-space:nowrap;line-height:1.15;margin:0 0 10px 0}
-            #sigMock .sig-caption{font-family:'Quicksand',sans-serif;font-weight:600;font-size:13px;letter-spacing:.18em;color:#2B484F;line-height:1.5;margin:0}
-            #sigMock .sig-heading{font-family:'Quicksand',sans-serif;font-weight:600;letter-spacing:.25em;color:#006363}
+            @import url('https://fonts.googleapis.com/css2?family=Questrial&family=Josefin+Sans:wght@300;400&family=Source+Sans+Pro:wght@300;400&display=swap');
+            #sigMock .sig-topbar{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
+            #sigMock .sig-topbar-title{font-family:'Source Sans Pro',serif;font-weight:700;font-size:20px;color:#0e7a7a;letter-spacing:.02em}
+            #sigMock .sig-nav{font-family:'Source Sans Pro',sans-serif;font-weight:400;font-size:13px;color:#0e7a7a}
+            #sigMock .sig-nav span{margin-left:22px}
+            #sigMock .sig-hero{position:relative;height:480px;background-image:url('cyd_hero.jpg');background-size:cover;background-position:62% center;background-repeat:no-repeat}
+            #sigMock .sig-hero-shade{position:absolute;left:0;right:0;top:34%;bottom:0;background:linear-gradient(180deg,rgba(20,48,64,0) 0%,rgba(20,48,64,.28) 55%,rgba(20,48,64,.42) 100%)}
+            #sigMock .sig-hero-text{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);text-align:center;width:fit-content;max-width:92%}
+            #sigMock .sig-kicker{font-family:'Source Sans Pro',sans-serif;font-weight:400;font-size:13px;letter-spacing:.32em;text-indent:.32em;color:#2b2b2b;text-transform:uppercase;margin:0 0 14px 0;white-space:nowrap}
+            #sigMock .sig-hero-title{font-family:'Questrial','Josefin Sans',sans-serif;font-weight:300;font-size:clamp(34px,5.2vw,54px);letter-spacing:.24em;text-indent:.12em;color:#0e7a7a;white-space:nowrap;line-height:1.1;margin:0;text-shadow:0 1px 10px rgba(237,230,218,.45)}
+            #sigMock .sig-heading{font-family:'Questrial',sans-serif;font-weight:400;letter-spacing:.25em;color:#0e7a7a}
             #sigMock .sig-body-text{font-family:'Source Sans Pro',sans-serif;font-weight:400;color:#2b2b2b;line-height:1.7}
             #sigMock .sig-acc-head{background:none;border:none;cursor:pointer;width:100%;text-align:left;padding:0}
-            #sigMock .sig-acc-head:focus-visible{outline:2px solid #006363;outline-offset:3px}
-            #sigMock .sig-acc-sign{display:inline-block;font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#006363;font-size:17px;border-bottom:1px solid rgba(0,99,99,.55);padding-bottom:5px;line-height:1.5}
+            #sigMock .sig-acc-head:focus-visible{outline:2px solid #0e7a7a;outline-offset:3px}
+            #sigMock .sig-acc-sign{display:inline-block;font-family:'Source Sans Pro',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#0e7a7a;font-size:17px;border-bottom:1px solid rgba(14,122,122,.55);padding-bottom:5px;line-height:1.5}
             #sigMock .sig-acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
             #sigMock .sig-acc-item.open .sig-acc-body{max-height:520px}
-            #sigMock .sig-tile-label{font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.2em;font-size:15px;color:#2b2b2b}
-            #sigMock .sig-btn{font-family:'Nunito',sans-serif;font-weight:600;font-size:16px;line-height:18px;display:inline-block;padding:12px 26px;color:#006363;background:transparent;border:3px solid #006363;text-decoration:none}
-            #sigMock .sig-btn:hover{background:#006363;color:#fff}
+            #sigMock .sig-tile-label{font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.2em;font-size:14px;color:#2b2b2b}
+            #sigMock .sig-btn{font-family:'Source Sans Pro',sans-serif;font-weight:400;font-size:16px;line-height:18px;display:inline-block;padding:12px 26px;color:#0e7a7a;background:transparent;border:3px solid #0e7a7a;text-decoration:none}
+            #sigMock .sig-btn:hover{background:#0e7a7a;color:#fff}
             #sigMock .sig-linen{background-color:#e8e2dc;background-image:
               url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='linear' slope='0.05'/></feComponentTransfer></filter><rect width='140' height='140' filter='url(%23g)'/></svg>"),
               repeating-linear-gradient(0deg, rgba(212,204,195,.12) 0 1px, transparent 1px 3px),
@@ -656,11 +661,16 @@
               repeating-linear-gradient(90deg, rgba(188,181,171,.10) 0 1px, transparent 1px 4px)}
           </style>
           <div id="sigMock">
-            <!-- Alcohol-ink hero: the original website artwork (cyd_hero.jpg) with a clean linen scrim panel so the title and subtitle never blend into the banner -->
+            <div class="sig-topbar">
+              <span class="sig-topbar-title">Cydney Reece</span>
+              <nav class="sig-nav"><span>Home</span><span>Curriculum Vitae</span><span>Portfolio</span><span>Contact Me</span></nav>
+            </div>
+            <!-- Alcohol-ink hero: text sits directly on the original site artwork (cyd_hero.jpg), just like her real site — subtle darkening gradient only for legibility -->
             <div class="relative overflow-hidden sig-hero">
-              <div class="sig-hero-panel">
+              <div class="sig-hero-shade"></div>
+              <div class="sig-hero-text">
+                <div class="sig-kicker">CREATIVE | STRATEGIC | HOLISTIC</div>
                 <h3 class="sig-hero-title">CYDNEY REECE</h3>
-                <div class="sig-caption">ALCOHOL INK ARTIST &middot; UX CONSULTANT</div>
               </div>
             </div>
 
@@ -724,10 +734,10 @@
 
               <!-- Footer-style tile strip, thin teal top borders -->
               <div class="grid grid-cols-2 gap-4 mt-12 max-w-md mx-auto">
-                <div class="text-center py-4" style="border-top:1px solid #006363;">
+                <div class="text-center py-4" style="border-top:1px solid #0e7a7a;">
                   <span class="sig-tile-label">Curriculum Vitae</span>
                 </div>
-                <div class="text-center py-4" style="border-top:1px solid #006363;">
+                <div class="text-center py-4" style="border-top:1px solid #0e7a7a;">
                   <span class="sig-tile-label">Portfolio</span>
                 </div>
               </div>
