@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SOETech x Cydney Reece - Websites, plainly</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="description" content="A plain-spoken website proposal for Cydney Reece, UX and brand designer, from SOETech LLC." />
+  <meta property="og:title" content="SOETech × Cydney Reece" />
+  <meta property="og:description" content="Three example designs and a plain services list for Cydney Reece's consulting presence." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: { 500:'#ef4444', 600:'#dc2626', 700:'#b91c1c' },
+            neon: { cyan:'#22d3ee', blue:'#3b82f6', purple:'#a855f7' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    /* ===== PARTICLES CANVAS ===== */
+    #particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+    /* ===== GLASS MORPHISM ===== */
+    .glass{background:rgba(15,23,42,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08)}
+    .glass-light{background:rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1)}
+    .glass-card{background:rgba(30,41,59,.7);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);transition:all .4s cubic-bezier(.4,0,.2,1)}
+    .glass-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(59,130,246,.15);border-color:rgba(59,130,246,.3)}
+
+    /* ===== GRADIENT TEXT ===== */
+    .gradient-text{background:linear-gradient(135deg,#3b82f6,#a855f7,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .gradient-text-warm{background:linear-gradient(135deg,#ef4444,#f97316,#eab308);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+    /* ===== ANIMATED BORDER ===== */
+    .animated-border{position:relative}
+    .animated-border::before{content:'';position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:linear-gradient(135deg,#3b82f6,#a855f7,#22d3ee,#3b82f6);background-size:300% 300%;animation:borderGlow 4s ease infinite;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;z-index:-1}
+    @keyframes borderGlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @keyframes pulse-glow{0%,100%{box-shadow:0 0 20px rgba(59,130,246,.3)}50%{box-shadow:0 0 40px rgba(59,130,246,.6)}}
+    @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    @keyframes countUp{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+    .animate-fade-in-up{animation:fadeInUp .8s ease forwards}
+    .animate-float{animation:float 6s ease-in-out infinite}
+    .animate-pulse-glow{animation:pulse-glow 3s ease-in-out infinite}
+    .delay-100{animation-delay:.1s}.delay-200{animation-delay:.2s}.delay-300{animation-delay:.3s}.delay-400{animation-delay:.4s}.delay-500{animation-delay:.5s}
+    .delay-100{opacity:0}.delay-200{opacity:0}.delay-300{opacity:0}.delay-400{opacity:0}.delay-500{opacity:0}
+
+    /* ===== PROGRESS INDICATOR ===== */
+    .progress-step{position:relative}
+    .progress-step.active .step-dot{background:linear-gradient(135deg,#3b82f6,#a855f7);box-shadow:0 0 12px rgba(59,130,246,.6)}
+    .progress-step .step-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.2);transition:all .3s}
+    .progress-line{height:2px;background:rgba(255,255,255,.1);flex:1}
+    .progress-line.active{background:linear-gradient(90deg,#3b82f6,#a855f7)}
+
+    /* ===== HAMBURGER ===== */
+    .hamburger-line{display:block;width:24px;height:2px;background:#fff;transition:all .3s}
+    .hamburger.open .hamburger-line:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.open .hamburger-line:nth-child(2){opacity:0}
+    .hamburger.open .hamburger-line:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .mobile-menu{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .mobile-menu.open{max-height:400px}
+
+    /* ===== REVEAL ON SCROLL ===== */
+    .reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.4,0,.2,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* ===== BUTTONS ===== */
+    .btn-primary{background:linear-gradient(135deg,#3b82f6,#6366f1);transition:all .3s;position:relative;overflow:hidden}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(59,130,246,.4)}
+    .btn-secondary{border:1px solid rgba(59,130,246,.4);color:#93c5fd;transition:all .3s}
+    .btn-secondary:hover{background:rgba(59,130,246,.1);border-color:#3b82f6;transform:translateY(-2px)}
+    .btn-cta{background:linear-gradient(135deg,#dc2626,#ea580c);transition:all .3s}
+    .btn-cta:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(220,38,38,.4)}
+
+    /* ===== PAGE TRANSITIONS ===== */
+    .page{display:none;opacity:0;transition:opacity .4s ease}
+    .page.active{display:block;opacity:1}
+
+    /* ===== MODAL ===== */
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:100;align-items:center;justify-content:center}
+    .modal-overlay.open{display:flex}
+
+    /* ===== STAT COUNTER ===== */
+    .stat-number{font-size:2.5rem;font-weight:900;line-height:1}
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0f172a}::-webkit-scrollbar-thumb{background:linear-gradient(#3b82f6,#a855f7);border-radius:4px}
+
+    /* ===== LIGHT MODE ===== */
+    html:not(.dark) body{background:linear-gradient(135deg,#f8fafc,#e2e8f0)!important}
+    html:not(.dark) .glass{background:rgba(255,255,255,.8);border-color:rgba(0,0,0,.08)}
+    html:not(.dark) .glass-card{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.08)}
+    html:not(.dark) .text-white{color:#0f172a!important}
+    html:not(.dark) .text-slate-300{color:#475569!important}
+    html:not(.dark) .text-slate-400{color:#64748b!important}
+    html:not(.dark) .text-slate-500{color:#94a3b8!important}
+
+    /* ===== SAFE AREA ===== */
+    body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+    footer{padding-bottom:env(safe-area-inset-bottom)}
+
+    /* ===== TOUCH DEVICES ===== */
+    @media(hover:none){.glass-card:hover{transform:none;box-shadow:none}.btn-primary:hover,.btn-secondary:hover,.btn-cta:hover{transform:none}}
+    @media(max-width:374px){h1{font-size:1.75rem!important;line-height:1.2!important}}
+    @media(max-width:768px){#particles-canvas{display:none}}
+
+    html{scroll-behavior:smooth}
+
+    /* ===== PREVIEW FRAME ===== */
+    .preview-frame{border:2px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;position:relative}
+    .preview-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:32px;background:rgba(15,23,42,.9);z-index:2}
+    .browser-dots{display:flex;gap:6px;position:absolute;top:10px;left:12px;z-index:3}
+    .browser-dots span{width:10px;height:10px;border-radius:50%}
+
+    /* ===== SERVICE CARD HOVER ===== */
+    .service-card{transition:all .4s cubic-bezier(.4,0,.2,1)}
+    .service-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 20px 60px rgba(59,130,246,.2)}
+  </style>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen font-sans overflow-x-hidden">
+
+  <!-- ===== PARTICLES CANVAS ===== -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ===== PROGRESS INDICATOR ===== -->
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div class="glass px-4 py-1.5">
+      <div class="max-w-6xl mx-auto flex items-center justify-center gap-2 text-xs">
+        <a href="#welcome" onclick="navigateTo('welcome')" class="progress-step active flex items-center gap-2 hover:opacity-80" data-step="1">
+          <div class="step-dot"></div>
+          <span class="text-blue-400 font-semibold hidden sm:inline">Welcome</span>
+        </a>
+        <div class="progress-line" data-line="1"></div>
+        <a href="#designs" onclick="navigateTo('designs')" class="progress-step flex items-center gap-2 hover:opacity-80" data-step="2">
+          <div class="step-dot"></div>
+          <span class="text-slate-500 hidden sm:inline">Designs</span>
+        </a>
+        <div class="progress-line" data-line="2"></div>
+        <a href="#services" onclick="navigateTo('services')" class="progress-step flex items-center gap-2 hover:opacity-80" data-step="3">
+          <div class="step-dot"></div>
+          <span class="text-slate-500 hidden sm:inline">Services</span>
+        </a>
+        <div class="progress-line" data-line="3"></div>
+        <a href="#contact" onclick="navigateTo('contact')" class="progress-step flex items-center gap-2 hover:opacity-80" data-step="4">
+          <div class="step-dot"></div>
+          <span class="text-slate-500 hidden sm:inline">Contact</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STICKY NAV ===== -->
+  <nav class="glass fixed top-8 left-0 right-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#welcome" onclick="navigateTo('welcome')" class="flex items-center space-x-3 group">
+        <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-500/30">
+          <i class="fas fa-pen-nib text-sm"></i>
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white group-hover:text-blue-400 transition-colors">SOETech × Cydney Reece</div>
+          <div class="text-[10px] text-slate-400">Websites, plainly</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center space-x-1">
+        <a href="#welcome" onclick="navigateTo('welcome')" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all" data-page="welcome">Welcome</a>
+        <a href="#designs" onclick="navigateTo('designs')" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all" data-page="designs">Designs</a>
+        <a href="#services" onclick="navigateTo('services')" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all" data-page="services">Services</a>
+        <a href="#contact" onclick="navigateTo('contact')" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all" data-page="contact">Contact</a>
+        <button onclick="toggleTheme()" class="theme-toggle ml-2 p-2 rounded-lg hover:bg-white/5 transition-all" title="Toggle theme">
+          <i class="fas fa-moon text-slate-400 text-sm" id="themeIcon"></i>
+        </button>
+        <a href="mailto:info@soetechllc.com?subject=Cydney%20-%20lets%20talk" class="btn-cta ml-2 px-4 py-2 rounded-lg text-sm font-semibold text-white">
+          <i class="fas fa-envelope mr-1"></i> Let's Talk
+        </a>
+      </div>
+      <button class="md:hidden hamburger flex flex-col gap-1.5 p-2" onclick="toggleMobileMenu()" id="hamburgerBtn">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </button>
+    </div>
+    <div class="mobile-menu md:hidden" id="mobileMenu">
+      <div class="px-4 pb-4 space-y-1 border-t border-white/5">
+        <a href="#welcome" onclick="navigateTo('welcome');toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-slate-300 hover:bg-white/5"><i class="fas fa-home mr-2 w-5 text-center"></i>Welcome</a>
+        <a href="#designs" onclick="navigateTo('designs');toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-slate-300 hover:bg-white/5"><i class="fas fa-palette mr-2 w-5 text-center"></i>Three Designs</a>
+        <a href="#services" onclick="navigateTo('services');toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-slate-300 hover:bg-white/5"><i class="fas fa-list-check mr-2 w-5 text-center"></i>Services</a>
+        <a href="#contact" onclick="navigateTo('contact');toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-slate-300 hover:bg-white/5"><i class="fas fa-paper-plane mr-2 w-5 text-center"></i>Contact</a>
+        <a href="mailto:info@soetechllc.com?subject=Cydney%20-%20lets%20talk" class="block btn-cta px-4 py-3 rounded-lg text-white font-semibold text-left"><i class="fas fa-envelope mr-2 w-5 text-center"></i>Let's Talk</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================ -->
+  <!-- PAGE 1: WELCOME                                             -->
+  <!-- ============================================================ -->
+  <div class="page active" id="page-welcome">
+
+    <!-- HERO -->
+    <header class="pt-36 pb-16 px-6 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 glass-light px-4 py-2 rounded-full text-sm text-blue-300 mb-6 animate-fade-in-up">
+          <i class="fas fa-pen-nib"></i> Prepared for Cydney Reece - October 2026
+        </div>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black mb-4 animate-fade-in-up delay-100">
+          Your work speaks.<br/><span class="gradient-text">Your site should too.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto px-2 animate-fade-in-up delay-200">
+          You know UX. You design in Figma and Illustrator. What's missing is a consulting presence that speaks plainly and works quietly while you do the creative work.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 animate-fade-in-up">
+          <a href="#designs" onclick="navigateTo('designs')" class="btn-primary px-8 py-4 rounded-xl text-lg font-bold text-white shadow-lg shadow-blue-500/30">
+            <i class="fas fa-eye mr-2"></i> See Three Designs
+          </a>
+          <a href="#contact" onclick="navigateTo('contact')" class="btn-secondary px-8 py-4 rounded-xl text-lg font-bold">
+            <i class="fas fa-phone mr-2"></i> Free 20-Min Look Call
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="glass-card rounded-2xl p-6 md:p-8 reveal">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold mb-4">
+              <i class="fas fa-bolt"></i> WHO WE ARE
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">SOETech LLC</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">
+              We help small businesses grow online with local, non-big-box AI services. Our sweet spot is people like you: excellent at your craft, flummoxed by WordPress. We stay on the cutting edge of agentic-human capabilities so you don't have to.
+            </p>
+            <p class="text-slate-400 leading-relaxed">
+              One designer on your project. Plain language. No jargon tax.
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <div class="w-32 h-32 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-blue-500/20 animate-float">
+              <i class="fas fa-pen-nib text-4xl text-white"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CARDS -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="text-center mb-12 reveal">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold mb-4">
+          <i class="fas fa-bullseye"></i> WHY SOETECH
+        </div>
+        <h2 class="text-2xl md:text-3xl font-bold mb-3">Three Reasons <span class="gradient-text">It Fits</span></h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          We work the way you'd want a studio partner to work.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-6 text-center reveal">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-pink-500/20">
+            <i class="fas fa-heart text-2xl text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Heart</h3>
+          <p class="text-slate-400 text-sm">Small-business attention. Agency craft. Local prices. You get all three, not two out of three.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center reveal">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/20">
+            <i class="fas fa-hands text-2xl text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Hands</h3>
+          <p class="text-slate-400 text-sm">You design. We engineer. Figma and Illustrator files welcome — we build what you draw instead of arguing with it.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center reveal">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-cyan-500/20">
+            <i class="fas fa-robot text-2xl text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Edge</h3>
+          <p class="text-slate-400 text-sm">Agentic workflow. Human QA. AI-native but never AI-sounding — your voice stays yours.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATS -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="glass rounded-2xl p-8 reveal">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="stat-number gradient-text-warm">1</div>
+            <div class="text-slate-400 text-sm mt-1">Designer on Every Project</div>
+          </div>
+          <div>
+            <div class="stat-number gradient-text">0</div>
+            <div class="text-slate-400 text-sm mt-1">Call Centers</div>
+          </div>
+          <div>
+            <div class="stat-number gradient-text">100%</div>
+            <div class="text-slate-400 text-sm mt-1">Human-Checked Deliverables</div>
+          </div>
+          <div>
+            <div class="stat-number gradient-text-warm">3</div>
+            <div class="text-slate-400 text-sm mt-1">Example Designs Inside</div>
+          </div>
+        </div>
+        <p class="text-slate-500 text-xs text-center mt-6">Numbers describe our team, not promises about search engines</p>
+      </div>
+    </section>
+
+    <!-- DELIVERABLES -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="text-center mb-12 reveal">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-semibold mb-4">
+          <i class="fas fa-rocket"></i> WHAT WE'LL BUILD
+        </div>
+        <h2 class="text-2xl md:text-3xl font-bold mb-3">Your <span class="gradient-text">Launch Kit</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="glass-card rounded-2xl p-6 flex items-start gap-4 reveal">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+            <i class="fas fa-paintbrush text-white"></i>
+          </div>
+          <div>
+            <h3 class="font-bold mb-1">Redesign</h3>
+            <p class="text-slate-400 text-sm">Your current site, rebuilt to match how you want clients to see you.</p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 flex items-start gap-4 reveal">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+            <i class="fas fa-briefcase text-white"></i>
+          </div>
+          <div>
+            <h3 class="font-bold mb-1">New Consulting Page</h3>
+            <p class="text-slate-400 text-sm">A page that sells your consulting — what it is, who it's for, how to start.</p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 flex items-start gap-4 reveal">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+            <i class="fas fa-broom text-white"></i>
+          </div>
+          <div>
+            <h3 class="font-bold mb-1">Launch Grooming</h3>
+            <p class="text-slate-400 text-sm">Broken links found. Old copy cleaned. Menus untangled. Small fixes, big polish.</p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 flex items-start gap-4 reveal">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+            <i class="fas fa-heart-pulse text-white"></i>
+          </div>
+          <div>
+            <h3 class="font-bold mb-1">Ongoing Care</h3>
+            <p class="text-slate-400 text-sm">Updates, backups, and someone to call when something breaks. It happens to everyone.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-10 reveal">
+        <a href="#designs" onclick="navigateTo('designs')" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-xl text-lg font-bold text-white shadow-lg shadow-blue-500/30">
+          <i class="fas fa-arrow-right"></i> See the Three Designs
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 py-8 px-6 relative z-10">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">S</div>
+          <div>
+            <div class="text-sm font-bold">SOETech LLC</div>
+            <div class="text-[10px] text-slate-400">local, agent-powered, human-checked</div>
+          </div>
+        </div>
+        <div class="text-slate-500 text-xs">Proposal CR-2026-10-18 — v1 draft — pricing negotiable — barter available</div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <!-- PAGE 2: THREE DESIGNS                                       -->
+  <!-- ============================================================ -->
+  <div class="page" id="page-designs">
+
+    <!-- HERO -->
+    <header class="pt-36 pb-16 px-6 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 glass-light px-4 py-2 rounded-full text-sm text-blue-300 mb-6 animate-fade-in-up">
+          <i class="fas fa-palette"></i> Step 2 of 4 — Three Directions
+        </div>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black mb-4 animate-fade-in-up delay-100">
+          Three ways your new <span class="gradient-text">site could look</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto px-2 animate-fade-in-up delay-200">
+          Same content, three personalities. Which one feels most like you?
+        </p>
+      </div>
+    </header>
+
+    <!-- DESIGN 1: GALLERY -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="preview-frame glass-card rounded-2xl overflow-hidden reveal">
+        <!-- Browser bar -->
+        <div class="bg-slate-900 px-4 py-2 flex items-center gap-3 border-b border-white/5">
+          <div class="browser-dots">
+            <span class="bg-red-500"></span><span class="bg-yellow-500"></span><span class="bg-green-500"></span>
+          </div>
+          <div class="flex-1 ml-12">
+            <div class="bg-slate-800 rounded-lg px-3 py-1 text-xs text-slate-400 text-center">
+              <i class="fas fa-lock text-green-400 mr-1"></i> cydneyreece.site
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery mockup: dark charcoal + soft gold -->
+        <div class="p-6 md:p-10" style="background:#1a1a1d;">
+          <div class="flex items-center justify-between mb-10">
+            <div class="text-sm font-light tracking-[0.3em] uppercase" style="color:#d4b483;">Cydney Reece</div>
+            <div class="hidden md:flex items-center gap-6 text-xs" style="color:#8a8a8f;">
+              <span>Work</span><span>Consulting</span><span>About</span><span>Contact</span>
+            </div>
+          </div>
+          <div class="text-center mb-12">
+            <h3 class="font-light mb-4" style="font-size:2.2rem;line-height:1.1;color:#f5f2ea;">Design that thinks<br/>before it looks.</h3>
+            <p class="text-sm max-w-md mx-auto" style="color:#8a8a8f;">UX &amp; brand design for teams who care about the why as much as the wow.</p>
+          </div>
+          <div class="grid grid-cols-3 gap-4 mb-10">
+            <div class="rounded-lg aspect-[4/3] flex items-end p-3" style="background:linear-gradient(160deg,#2a2a2e,#232327);">
+              <div class="w-8 h-[3px] rounded" style="background:#d4b483;"></div>
+            </div>
+            <div class="rounded-lg aspect-[4/3] flex items-end p-3" style="background:linear-gradient(160deg,#26262b,#1f1f23);">
+              <div class="w-8 h-[3px] rounded" style="background:#d4b483;"></div>
+            </div>
+            <div class="rounded-lg aspect-[4/3] flex items-end p-3" style="background:linear-gradient(160deg,#2c2c31,#222226);">
+              <div class="w-8 h-[3px] rounded" style="background:#d4b483;"></div>
+            </div>
+          </div>
+          <div class="rounded-xl p-6 text-center" style="background:#232327;border:1px solid #333338;">
+            <div class="text-xs tracking-[0.25em] uppercase mb-2" style="color:#d4b483;">Now offering</div>
+            <div class="text-sm" style="color:#c8c8cc;">Independent UX consulting — audits, flows, and design systems for small teams.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 mt-6 reveal">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+          <div class="flex-shrink-0">
+            <h3 class="text-xl font-bold mb-1">Gallery</h3>
+            <span class="text-xs bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full font-semibold">Quiet confidence</span>
+          </div>
+          <div class="flex-1">
+            <div class="text-xs text-slate-500 font-semibold mb-2 uppercase tracking-wider">Best for</div>
+            <ul class="text-sm text-slate-300 space-y-1">
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Letting the portfolio do the talking</li>
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Client work presented like a museum, not a feed</li>
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Consulting offered one quiet scroll away</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-slate-500 text-xs mt-4">Colors, spacing, and type all adjust after you pick a direction. Nothing here is locked.</p>
+      </div>
+    </section>
+
+    <!-- DESIGN 2: PLAYBOOK -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="preview-frame glass-card rounded-2xl overflow-hidden reveal">
+        <div class="bg-slate-900 px-4 py-2 flex items-center gap-3 border-b border-white/5">
+          <div class="browser-dots">
+            <span class="bg-red-500"></span><span class="bg-yellow-500"></span><span class="bg-green-500"></span>
+          </div>
+          <div class="flex-1 ml-12">
+            <div class="bg-slate-800 rounded-lg px-3 py-1 text-xs text-slate-400 text-center">
+              <i class="fas fa-lock text-green-400 mr-1"></i> cydneyreece.site
+            </div>
+          </div>
+        </div>
+
+        <!-- Playbook mockup: crisp white, editorial -->
+        <div class="p-6 md:p-10" style="background:#fbfbf9;">
+          <div class="flex items-center justify-between mb-8 pb-4" style="border-bottom:1px solid #e4e4e0;">
+            <div class="text-sm font-extrabold tracking-tight" style="color:#1c1c1e;">C. Reece — UX</div>
+            <div class="hidden md:flex items-center gap-5 text-xs" style="color:#71716e;">
+              <span>Case Studies</span><span>Services</span><span>Notes</span><span>Hire Me</span>
+            </div>
+          </div>
+          <div class="mb-8">
+            <h3 class="font-extrabold tracking-tight mb-2" style="font-size:1.5rem;color:#1c1c1e;">Small team. Sharp UX. No mystery.</h3>
+            <p class="text-xs" style="color:#71716e;">Independent UX consulting · audits · flows · design systems</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="rounded-lg p-4" style="background:#fff;border:1px solid #e4e4e0;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+              <div class="text-[10px] font-bold uppercase tracking-wider mb-2" style="color:#2563eb;">Package 01</div>
+              <div class="text-sm font-bold" style="color:#1c1c1e;">UX Audit</div>
+              <p class="text-[11px] mt-1" style="color:#71716e;">A full read of your product. Findings first, fixes second.</p>
+            </div>
+            <div class="rounded-lg p-4" style="background:#fff;border:1px solid #e4e4e0;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+              <div class="text-[10px] font-bold uppercase tracking-wider mb-2" style="color:#2563eb;">Package 02</div>
+              <div class="text-sm font-bold" style="color:#1c1c1e;">Flow Redesign</div>
+              <p class="text-[11px] mt-1" style="color:#71716e;">One journey, fixed end to end. Measured before and after.</p>
+            </div>
+            <div class="rounded-lg p-4" style="background:#fff;border:1px solid #e4e4e0;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+              <div class="text-[10px] font-bold uppercase tracking-wider mb-2" style="color:#2563eb;">Package 03</div>
+              <div class="text-sm font-bold" style="color:#1c1c1e;">Design System</div>
+              <p class="text-[11px] mt-1" style="color:#71716e;">Tokens, components, and docs your devs will actually read.</p>
+            </div>
+          </div>
+          <div class="rounded-lg p-4" style="background:#f1f5f9;">
+            <div class="text-[10px] font-bold uppercase tracking-wider mb-2" style="color:#475569;">UX-writing tip of the week</div>
+            <p class="text-xs" style="color:#475569;">"Sign up" vs "Create account" — test both. The smaller word usually wins.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 mt-6 reveal">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+          <div class="flex-shrink-0">
+            <h3 class="text-xl font-bold mb-1">Playbook</h3>
+            <span class="text-xs bg-blue-500/10 text-blue-300 px-3 py-1 rounded-full font-semibold">Editorial clarity</span>
+          </div>
+          <div class="flex-1">
+            <div class="text-xs text-slate-500 font-semibold mb-2 uppercase tracking-wider">Best for</div>
+            <ul class="text-sm text-slate-300 space-y-1">
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Consulting packages explained in plain sight</li>
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Showing off your UX writing, not just your visuals</li>
+              <li><i class="fas fa-check text-green-400 mr-2"></i>A site that reads like you think: organized, sharp</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-slate-500 text-xs mt-4">Colors, spacing, and type all adjust after you pick a direction. Nothing here is locked.</p>
+      </div>
+    </section>
+
+    <!-- DESIGN 3: SIGNAL -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="preview-frame glass-card rounded-2xl overflow-hidden reveal">
+        <div class="bg-slate-900 px-4 py-2 flex items-center gap-3 border-b border-white/5">
+          <div class="browser-dots">
+            <span class="bg-red-500"></span><span class="bg-yellow-500"></span><span class="bg-green-500"></span>
+          </div>
+          <div class="flex-1 ml-12">
+            <div class="bg-slate-800 rounded-lg px-3 py-1 text-xs text-slate-400 text-center">
+              <i class="fas fa-lock text-green-400 mr-1"></i> cydneyreece.site
+            </div>
+          </div>
+        </div>
+
+        <!-- Signal mockup: deep indigo night + warm coral -->
+        <div class="p-6 md:p-10" style="background:radial-gradient(120% 120% at 20% 10%, #2e1f5e 0%, #191039 55%, #120b2b 100%);">
+          <div class="flex items-center justify-between mb-10">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black text-white" style="background:linear-gradient(135deg,#ff6b5e,#ff8f6b);">CR</div>
+            <div class="hidden md:flex items-center gap-5 text-xs" style="color:#b3a8e0;">
+              <span>Work</span><span>Workshops</span><span>Community</span><span>Say Hi</span>
+            </div>
+          </div>
+          <div class="mb-10">
+            <div class="inline-block text-[11px] font-bold px-3 py-1 rounded-full mb-4" style="background:rgba(255,107,94,.15);color:#ff9a8f;">✦ Now booking consulting clients</div>
+            <h3 class="font-black text-white mb-3" style="font-size:2rem;line-height:1.15;">Let's make your product<br/><span style="color:#ff8f6b;">impossible to put down.</span></h3>
+            <p class="text-sm max-w-lg" style="color:#b3a8e0;">UX consulting with a community streak. I've run design workshops, mentored juniors, and shipped work people actually use.</p>
+          </div>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <div class="rounded-2xl p-5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);">
+              <div class="text-lg font-black" style="color:#ff8f6b;">Talks</div>
+              <p class="text-[11px]" style="color:#b3a8e0;">Local meetups, design circles</p>
+            </div>
+            <div class="rounded-2xl p-5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);">
+              <div class="text-lg font-black" style="color:#ff8f6b;">Mentoring</div>
+              <p class="text-[11px]" style="color:#b3a8e0;">Juniors rising into seniors</p>
+            </div>
+            <div class="rounded-2xl p-5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);">
+              <div class="text-lg font-black" style="color:#ff8f6b;">Consulting</div>
+              <p class="text-[11px]" style="color:#b3a8e0;">Hands-on, embedded, yours</p>
+            </div>
+          </div>
+          <div class="inline-flex items-center gap-2 px-5 py-3 rounded-full font-bold text-sm text-white" style="background:linear-gradient(135deg,#ff6b5e,#ff8f6b);">
+            Start a project <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 mt-6 reveal">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+          <div class="flex-shrink-0">
+            <h3 class="text-xl font-bold mb-1">Signal</h3>
+            <span class="text-xs bg-orange-500/10 text-orange-300 px-3 py-1 rounded-full font-semibold">Momentum</span>
+          </div>
+          <div class="flex-1">
+            <div class="text-xs text-slate-500 font-semibold mb-2 uppercase tracking-wider">Best for</div>
+            <ul class="text-sm text-slate-300 space-y-1">
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Building a personal brand people follow</li>
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Community energy: talks, mentoring, workshops</li>
+              <li><i class="fas fa-check text-green-400 mr-2"></i>A consulting offer that feels alive, not corporate</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-slate-500 text-xs mt-4">Colors, spacing, and type all adjust after you pick a direction. Nothing here is locked.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="text-center reveal">
+        <a href="#services" onclick="navigateTo('services')" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-xl text-lg font-bold text-white shadow-lg shadow-blue-500/30">
+          <i class="fas fa-arrow-right"></i> See What We'd Do With It
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 py-8 px-6 relative z-10">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">S</div>
+          <div>
+            <div class="text-sm font-bold">SOETech LLC</div>
+            <div class="text-[10px] text-slate-400">local, agent-powered, human-checked</div>
+          </div>
+        </div>
+        <div class="text-slate-500 text-xs">Proposal CR-2026-10-18 — v1 draft — pricing negotiable — barter available</div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <!-- PAGE 3: SERVICES                                            -->
+  <!-- ============================================================ -->
+  <div class="page" id="page-services">
+
+    <!-- HERO -->
+    <header class="pt-36 pb-16 px-6 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 glass-light px-4 py-2 rounded-full text-sm text-purple-300 mb-6 animate-fade-in-up">
+          <i class="fas fa-list-check"></i> Step 3 of 4 — What We Do
+        </div>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black mb-4 animate-fade-in-up delay-100">
+          Plain work. <span class="gradient-text">Plain list.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto px-2 animate-fade-in-up delay-200">
+          Four groups of work. No upsells hiding in the fine print.
+        </p>
+      </div>
+    </header>
+
+    <!-- SITE WORK -->
+    <section class="max-w-5xl mx-auto px-6 pb-10 relative z-10">
+      <div class="glass-card rounded-2xl p-6 md:p-8 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg">
+            <i class="fas fa-screwdriver-wrench text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold">Site Work</h3>
+        </div>
+        <ul class="space-y-3 text-slate-300 text-sm">
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-blue-400 mt-1"></i><span>Redesign on your existing WordPress + Elementor setup. No platform migration. You keep what works.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-blue-400 mt-1"></i><span>New page builds — including the consulting page this proposal is really about.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-blue-400 mt-1"></i><span>Mobile polish, so it behaves on the phones your clients actually use.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-blue-400 mt-1"></i><span>A speed pass. Faster loads, same content.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-blue-400 mt-1"></i><span>Quiet hardening: small things that make your site harder to poke at.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LAUNCH WORK -->
+    <section class="max-w-5xl mx-auto px-6 pb-10 relative z-10">
+      <div class="glass-card rounded-2xl p-6 md:p-8 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
+            <i class="fas fa-flag-checkered text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold">Launch Work</h3>
+        </div>
+        <ul class="space-y-3 text-slate-300 text-sm">
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-purple-400 mt-1"></i><span>Consulting-offer page copy, written alongside you. You know UX writing; we just help you aim it.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-purple-400 mt-1"></i><span>A simple intake or booking form, wired to your email.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-purple-400 mt-1"></i><span>Newsletter hookup, if you want one. No pressure if you don't.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-purple-400 mt-1"></i><span>Analytics baseline, so you can see what's happening from day one.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ONGOING CARE -->
+    <section class="max-w-5xl mx-auto px-6 pb-10 relative z-10">
+      <div class="glass-card rounded-2xl p-6 md:p-8 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shadow-lg">
+            <i class="fas fa-heart-pulse text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold">Ongoing Care</h3>
+        </div>
+        <ul class="space-y-3 text-slate-300 text-sm">
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-green-400 mt-1"></i><span>A monthly care plan: updates, backups, small fixes.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-green-400 mt-1"></i><span>Content edits when your work or offer changes.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-green-400 mt-1"></i><span>New pages as you grow. Adding a page shouldn't require a project plan.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-green-400 mt-1"></i><span>Emergency help when something breaks. Because someday it will.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TRADE -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="glass-card rounded-2xl p-6 md:p-8 reveal" style="border-color:rgba(168,85,247,.35);">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-lg">
+            <i class="fas fa-right-left text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold">Trade</h3>
+        </div>
+        <ul class="space-y-3 text-slate-300 text-sm">
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-orange-400 mt-1"></i><span>Your design and brand assets in exchange for tech hours. Figma and Illustrator work counts, at your level and rates.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-angle-right text-orange-400 mt-1"></i><span>Open to a trade — tell us what you need, and we'll shape the swap together.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRICING, PLAINLY -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="glass rounded-2xl p-8 md:p-10 reveal">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-semibold mb-4">
+            <i class="fas fa-tag"></i> PRICING
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold">Pricing, plainly</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="space-y-3 text-slate-300 text-sm">
+            <p><i class="fas fa-check text-green-400 mr-2"></i>Negotiable. Always.</p>
+            <p><i class="fas fa-check text-green-400 mr-2"></i>Small-business rates, sized to the job.</p>
+            <p><i class="fas fa-check text-green-400 mr-2"></i>Barter available — design skills for tech hours.</p>
+          </div>
+          <div class="space-y-3 text-slate-300 text-sm">
+            <p><i class="fas fa-check text-green-400 mr-2"></i>A written estimate after a free 20-minute look call.</p>
+            <p><i class="fas fa-check text-green-400 mr-2"></i>Never a surprise invoice.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-10 reveal">
+        <a href="#contact" onclick="navigateTo('contact')" class="btn-cta inline-flex items-center gap-3 px-8 py-4 rounded-xl text-lg font-bold text-white shadow-lg shadow-red-500/30">
+          <i class="fas fa-paper-plane"></i> Let's Talk
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 py-8 px-6 relative z-10">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">S</div>
+          <div>
+            <div class="text-sm font-bold">SOETech LLC</div>
+            <div class="text-[10px] text-slate-400">local, agent-powered, human-checked</div>
+          </div>
+        </div>
+        <div class="text-slate-500 text-xs">Proposal CR-2026-10-18 — v1 draft — pricing negotiable — barter available</div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <!-- PAGE 4: CONTACT                                             -->
+  <!-- ============================================================ -->
+  <div class="page" id="page-contact">
+
+    <!-- HERO -->
+    <header class="pt-36 pb-16 px-6 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 glass-light px-4 py-2 rounded-full text-sm text-green-300 mb-6 animate-fade-in-up">
+          <i class="fas fa-paper-plane"></i> Step 4 of 4 — Let's Connect
+        </div>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black mb-4 animate-fade-in-up delay-100">
+          Let's look <span class="gradient-text-warm">under the hood</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto px-2 animate-fade-in-up delay-200">
+          A free 20-minute look call. We peek at your current WordPress setup together, you ask anything, and you leave with a written estimate — whether or not you hire us.
+        </p>
+      </div>
+    </header>
+
+    <!-- CTA CARDS -->
+    <section class="max-w-5xl mx-auto px-6 pb-16 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <!-- Email -->
+        <div class="glass-card rounded-2xl p-8 text-center animate-pulse-glow reveal">
+          <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-blue-500/30">
+            <i class="fas fa-envelope text-3xl text-white"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Email Us</h3>
+          <p class="text-slate-400 mb-6">One line is enough. Tell us which design you liked, and we'll take it from there.</p>
+          <a href="mailto:info@soetechllc.com?subject=Cydney%20-%20lets%20talk" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-xl text-lg font-bold text-white shadow-lg shadow-blue-500/30">
+            <i class="fas fa-paper-plane"></i> Email info@soetechllc.com
+          </a>
+        </div>
+
+        <!-- Her current site -->
+        <div class="glass-card rounded-2xl p-8 text-center reveal">
+          <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-purple-500/30">
+            <i class="fas fa-globe text-3xl text-white"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Your Current Site</h3>
+          <p class="text-slate-400 mb-6">We'll start from what's live today. Here it is, for side-by-side comparison.</p>
+          <a href="https://cydneyreece.site" target="_blank" rel="noopener" class="btn-secondary inline-flex items-center gap-3 px-8 py-4 rounded-xl text-lg font-bold">
+            <i class="fas fa-arrow-up-right-from-square"></i> Visit cydneyreece.site
+          </a>
+        </div>
+      </div>
+
+      <!-- WHAT HAPPENS NEXT -->
+      <section class="pb-16">
+        <div class="text-center mb-12 reveal">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3">What Happens <span class="gradient-text">Next</span></h2>
+          <p class="text-slate-400 max-w-2xl mx-auto">Three steps. All of them cheap on your time.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-card rounded-2xl p-6 text-center relative reveal">
+            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-sm font-bold shadow-lg">1</div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <i class="fas fa-comments text-2xl text-white"></i>
+            </div>
+            <h3 class="font-bold mb-2">The Look Call</h3>
+            <p class="text-slate-400 text-sm">Free, 20 minutes. We look at your site together. You keep the notes either way.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 text-center relative reveal">
+            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-sm font-bold shadow-lg">2</div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <i class="fas fa-file-lines text-2xl text-white"></i>
+            </div>
+            <h3 class="font-bold mb-2">Written Estimate</h3>
+            <p class="text-slate-400 text-sm">A real number in writing, shaped around the direction you picked. Barter options included.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 text-center relative reveal">
+            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-sm font-bold shadow-lg">3</div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <i class="fas fa-rocket text-2xl text-white"></i>
+            </div>
+            <h3 class="font-bold mb-2">Build &amp; Launch</h3>
+            <p class="text-slate-400 text-sm">You design, we engineer. Your consulting presence goes live with ongoing care behind it.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="pb-16">
+        <div class="glass rounded-2xl p-8 md:p-12 text-center relative overflow-hidden reveal">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/10 pointer-events-none"></div>
+          <div class="relative z-10">
+            <div class="text-4xl mb-4">✏️</div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Your Work Speaks. Your Site Should Too.</h2>
+            <p class="text-slate-300 max-w-2xl mx-auto mb-8">
+              Pick a design. Tell us about the trade if you want one. We'll handle the WordPress parts you'd rather not think about.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="mailto:info@soetechllc.com?subject=Cydney%20-%20lets%20talk" class="btn-cta px-10 py-5 rounded-xl text-xl font-bold text-white shadow-lg shadow-red-500/30">
+                <i class="fas fa-envelope mr-2"></i> Email Us Now
+              </a>
+              <a href="https://cydneyreece.site" target="_blank" rel="noopener" class="btn-secondary px-8 py-5 rounded-xl text-lg font-bold">
+                <i class="fas fa-globe mr-2"></i> See Your Current Site
+              </a>
+            </div>
+            <p class="text-slate-500 text-xs mt-6">
+              SOETech LLC — local, agent-powered, human-checked
+            </p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 py-8 px-6 relative z-10">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">S</div>
+          <div>
+            <div class="text-sm font-bold">SOETech LLC</div>
+            <div class="text-[10px] text-slate-400">local, agent-powered, human-checked</div>
+          </div>
+        </div>
+        <div class="text-slate-500 text-xs">Proposal CR-2026-10-18 — v1 draft — pricing negotiable — barter available</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ===== PARTICLES BACKGROUND =====
+    (function() {
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let animFrame;
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 0.5;
+          this.speedX = (Math.random() - 0.5) * 0.5;
+          this.speedY = (Math.random() - 0.5) * 0.5;
+          this.opacity = Math.random() * 0.5 + 0.1;
+          const colors = ['#3b82f6', '#a855f7', '#22d3ee', '#ef4444', '#f97316'];
+          this.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+            this.reset();
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.globalAlpha = this.opacity;
+          ctx.fill();
+          ctx.globalAlpha = 1;
+        }
+      }
+
+      // Create particles
+      const count = Math.min(80, Math.floor(window.innerWidth / 15));
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+
+      // Draw connections
+      function drawConnections() {
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 150) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = particles[i].color;
+              ctx.globalAlpha = 0.05 * (1 - dist / 150);
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+              ctx.globalAlpha = 1;
+            }
+          }
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        drawConnections();
+        animFrame = requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+
+    // ===== PAGE NAVIGATION (SPA) =====
+    let currentPage = 'welcome';
+
+    function navigateTo(page) {
+      if (currentPage === page) return;
+
+      // Hide current page
+      const currentEl = document.getElementById('page-' + currentPage);
+      if (currentEl) {
+        currentEl.classList.remove('active');
+        currentEl.style.display = 'none';
+      }
+
+      // Show new page
+      const newEl = document.getElementById('page-' + page);
+      if (newEl) {
+        newEl.style.display = 'block';
+        // Force reflow
+        newEl.offsetHeight;
+        newEl.classList.add('active');
+      }
+
+      currentPage = page;
+
+      // Update progress indicator
+      updateProgress(page);
+
+      // Update nav links
+      updateNavLinks(page);
+
+      // Update URL hash
+      history.pushState(null, '', '#' + page);
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Re-trigger reveal animations
+      setTimeout(initReveal, 100);
+    }
+
+    function updateProgress(page) {
+      const steps = { welcome: 1, designs: 2, services: 3, contact: 4 };
+      const currentStep = steps[page] || 1;
+
+      document.querySelectorAll('.progress-step').forEach(el => {
+        const step = parseInt(el.dataset.step);
+        if (step <= currentStep) {
+          el.classList.add('active');
+          const label = el.querySelector('span');
+          if (label) {
+            label.className = 'hidden sm:inline';
+            if (step === currentStep) {
+              label.classList.add('text-blue-400', 'font-semibold');
+            } else {
+              label.classList.add('text-slate-400');
+            }
+          }
+        } else {
+          el.classList.remove('active');
+          const label = el.querySelector('span');
+          if (label) {
+            label.className = 'text-slate-500 hidden sm:inline';
+          }
+        }
+      });
+
+      document.querySelectorAll('.progress-line').forEach((line, i) => {
+        if (i < currentStep) {
+          line.classList.add('active');
+        } else {
+          line.classList.remove('active');
+        }
+      });
+    }
+
+    function updateNavLinks(page) {
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.dataset.page === page) {
+          link.classList.add('text-blue-400', 'bg-blue-500/10');
+          link.classList.remove('text-slate-300');
+        } else {
+          link.classList.remove('text-blue-400', 'bg-blue-500/10');
+          link.classList.add('text-slate-300');
+        }
+      });
+
+      // Update mobile menu
+      document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.classList.remove('text-blue-400', 'bg-blue-500/10', 'font-medium');
+        link.classList.add('text-slate-300');
+      });
+    }
+
+    // ===== MOBILE MENU =====
+    function toggleMobileMenu() {
+      const hamburger = document.getElementById('hamburgerBtn');
+      const menu = document.getElementById('mobileMenu');
+      hamburger.classList.toggle('open');
+      menu.classList.toggle('open');
+    }
+
+    // ===== THEME TOGGLE =====
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('themeIcon');
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        icon.className = 'fas fa-moon text-slate-400 text-sm';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        icon.className = 'fas fa-sun text-yellow-500 text-sm';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Load saved theme
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.documentElement.classList.remove('dark');
+        const icon = document.getElementById('themeIcon');
+        if (icon) icon.className = 'fas fa-sun text-yellow-500 text-sm';
+      }
+    })();
+
+    // ===== REVEAL ON SCROLL =====
+    function initReveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      reveals.forEach(el => observer.observe(el));
+    }
+    initReveal();
+
+    // ===== HASH ROUTING =====
+    function handleHash() {
+      const hash = window.location.hash.replace('#', '') || 'welcome';
+      if (['welcome', 'designs', 'services', 'contact'].includes(hash)) {
+        navigateTo(hash);
+      }
+    }
+    window.addEventListener('hashchange', handleHash);
+    handleHash();
+
+    // ===== KEYBOARD NAVIGATION =====
+    document.addEventListener('keydown', (e) => {
+      const pages = ['welcome', 'designs', 'services', 'contact'];
+      const idx = pages.indexOf(currentPage);
+      if (e.key === 'ArrowRight' && idx < pages.length - 1) {
+        navigateTo(pages[idx + 1]);
+      } else if (e.key === 'ArrowLeft' && idx > 0) {
+        navigateTo(pages[idx - 1]);
+      }
+    });
+  </script>
+</body>
+</html>
