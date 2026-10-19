@@ -630,75 +630,171 @@
           </div>
         </div>
 
-        <!-- Signature mockup: fluid-art night hero, then stark white minimalism -->
+        <!-- Signature mockup: near-identical recreation of her live-site style — alcohol-ink hero, warm linen body, accordion signature device -->
         <div class="p-0">
-          <!-- Fluid-art hero band -->
-          <div class="relative overflow-hidden" style="background:linear-gradient(135deg,#1b2a4a 0%,#23405e 55%,#2e5c6e 100%);">
-            <svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice" class="absolute inset-0 w-full h-full" aria-hidden="true">
-              <defs>
-                <linearGradient id="sigGold" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#e8c15a"/><stop offset="1" stop-color="#d4a537"/>
-                </linearGradient>
-              </defs>
-              <path d="M -40 220 C 120 140, 260 260, 420 180 S 700 90, 840 150" fill="none" stroke="url(#sigGold)" stroke-width="2.5" opacity="0.9"/>
-              <path d="M -40 260 C 150 180, 300 300, 460 210 S 720 120, 840 190" fill="none" stroke="url(#sigGold)" stroke-width="1.5" opacity="0.55"/>
-              <path d="M -40 120 C 140 60, 320 170, 480 100 S 700 30, 840 70" fill="none" stroke="url(#sigGold)" stroke-width="1.5" opacity="0.4"/>
-              <path d="M -40 60 C 180 20, 360 110, 540 50 S 760 -10, 840 20" fill="none" stroke="url(#sigGold)" stroke-width="1" opacity="0.25"/>
-            </svg>
-            <div class="relative z-10">
-              <div class="flex items-center justify-between px-6 md:px-10 py-4">
-                <div class="text-[11px] font-semibold tracking-[0.25em] uppercase text-white">Cydney Reece</div>
-                <div class="hidden md:flex items-center gap-6 text-[11px] tracking-wider" style="color:rgba(255,255,255,.7);">
-                  <span>Home</span><span>Work</span><span>Contact</span>
+          <style>
+            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Open+Sans:wght@400&display=swap');
+            #sigMock .sig-hero-title{font-family:'Raleway',sans-serif;font-weight:300;letter-spacing:.35em;color:#1d5c5a;text-shadow:0 0 1px rgba(255,255,255,.9),0 0 10px rgba(255,255,255,.55),0 1px 3px rgba(255,255,255,.5)}
+            #sigMock .sig-caption{font-family:'Raleway',sans-serif;font-weight:300;letter-spacing:.32em;color:#173a44;text-shadow:0 0 2px rgba(255,255,255,.95),0 0 10px rgba(255,255,255,.75),0 1px 3px rgba(20,40,50,.45)}
+            #sigMock .sig-heading{font-family:'Raleway',sans-serif;font-weight:300;letter-spacing:.25em;color:#1d6a63}
+            #sigMock .sig-body-text{font-family:'Open Sans',sans-serif;color:#2b2b2b;line-height:1.8}
+            #sigMock .sig-acc-head{background:none;border:none;cursor:pointer;width:100%;text-align:left;padding:0}
+            #sigMock .sig-acc-head:focus-visible{outline:2px solid #1d6a63;outline-offset:3px}
+            #sigMock .sig-acc-sign{display:inline-block;font-family:'Raleway',sans-serif;font-weight:300;text-transform:uppercase;letter-spacing:.22em;color:#1d6a63;font-size:13px;border-bottom:1px solid rgba(29,106,99,.55);padding-bottom:5px;line-height:1.5}
+            #sigMock .sig-acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+            #sigMock .sig-acc-item.open .sig-acc-body{max-height:520px}
+            #sigMock .sig-tile-label{font-family:'Raleway',sans-serif;font-weight:300;text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:#2b2b2b}
+          </style>
+          <div id="sigMock">
+            <!-- Alcohol-ink hero: layered CSS gradients + inline SVG gold veins + grain, no external imagery -->
+            <div class="relative overflow-hidden" style="height:380px;background:
+              radial-gradient(70% 95% at 18% 18%, rgba(23,102,94,.9) 0%, rgba(23,102,94,0) 58%),
+              radial-gradient(85% 110% at 30% 62%, #1c2452 0%, rgba(28,36,82,0) 60%),
+              radial-gradient(55% 75% at 6% 92%, rgba(16,26,64,.95) 0%, rgba(16,26,64,0) 62%),
+              radial-gradient(110% 130% at 86% 10%, #dbe4ef 0%, rgba(219,228,239,0) 66%),
+              radial-gradient(60% 80% at 68% 55%, rgba(196,212,228,.55) 0%, rgba(196,212,228,0) 65%),
+              linear-gradient(52deg, #1d2450 0%, #2c3a63 30%, #7f97ad 58%, #dbe4ef 88%);">
+              <svg viewBox="0 0 800 380" preserveAspectRatio="xMidYMid slice" class="absolute inset-0 w-full h-full" aria-hidden="true">
+                <defs>
+                  <linearGradient id="sigGoldV" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#e8c15a"/><stop offset="1" stop-color="#d4a537"/>
+                  </linearGradient>
+                  <filter id="sigGrainF">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+                    <feColorMatrix type="saturate" values="0"/>
+                  </filter>
+                </defs>
+                <g fill="none" stroke="url(#sigGoldV)" stroke-linecap="round">
+                  <path d="M 800 28 C 660 70, 588 128, 452 186 S 210 300, 30 356" stroke-width="2.5" opacity=".85"/>
+                  <path d="M 800 66 C 672 104, 606 160, 470 214 S 226 322, 44 372" stroke-width="1.5" opacity=".55"/>
+                  <path d="M 798 100 C 688 138, 626 190, 492 240 S 250 340, 66 380" stroke-width="1" opacity=".4"/>
+                  <path d="M 760 18 C 640 52, 566 100, 436 158 S 200 268, 24 322" stroke-width="1" opacity=".3"/>
+                  <path d="M 820 140 C 700 176, 640 224, 512 268 S 280 356, 100 386" stroke-width="1.5" opacity=".45"/>
+                </g>
+                <g fill="#e8c15a">
+                  <circle cx="470" cy="205" r="2.2" opacity=".9"/>
+                  <circle cx="492" cy="228" r="1.6" opacity=".75"/>
+                  <circle cx="446" cy="188" r="1.3" opacity=".7"/>
+                  <circle cx="524" cy="248" r="1.1" opacity=".6"/>
+                  <circle cx="430" cy="170" r="1.8" opacity=".65"/>
+                  <circle cx="548" cy="270" r="1.4" opacity=".55"/>
+                  <circle cx="404" cy="152" r="1" opacity=".5"/>
+                  <circle cx="572" cy="292" r="1.2" opacity=".45"/>
+                  <circle cx="380" cy="132" r="1.5" opacity=".4"/>
+                  <circle cx="604" cy="316" r="1" opacity=".4"/>
+                  <circle cx="352" cy="118" r="1.1" opacity=".35"/>
+                  <circle cx="516" cy="212" r="1.2" opacity=".6"/>
+                </g>
+                <rect width="800" height="380" filter="url(#sigGrainF)" opacity=".06"/>
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center" style="padding:36px 24px 30px;">
+                <h3 class="sig-hero-title" style="font-size:1.7rem;">CYDNEY REECE</h3>
+                <div class="mt-auto sig-caption" style="font-size:11px;">ALCOHOL INK ARTIST | UX CONSULTANT</div>
+              </div>
+            </div>
+
+            <!-- Warm linen section: her voice, adjusted to the consulting launch -->
+            <div class="px-6 md:px-14 py-10" style="background:#e9e3d9;">
+              <div class="text-center mb-6">
+                <h3 class="sig-heading" style="font-size:1.15rem;">EXPERIENCE</h3>
+              </div>
+              <p class="sig-body-text text-center max-w-xl mx-auto mb-10" style="font-size:16px;">A decade of making complicated things clear, now offered as UX consulting — thoughtful, honest work for teams who want their products to feel as good as they function.</p>
+
+              <!-- Signature device: working accordion, first item open -->
+              <div id="sigAcc" class="max-w-md mx-auto">
+                <div class="sig-acc-item open" style="margin-bottom:28px;">
+                  <button type="button" class="sig-acc-head">
+                    <span class="sig-acc-sign">+ I AM A STRATEGIC &amp; HOLISTIC THINKER</span>
+                  </button>
+                  <div class="sig-acc-body">
+                    <div style="padding-top:12px;padding-left:26px;">
+                      <p class="sig-body-text" style="font-size:14px;margin-bottom:8px;">I look for long-term solutions rather than band-aids. I am not afraid of change.</p>
+                      <p class="sig-body-text" style="font-size:14px;margin-bottom:8px;">I help others understand the simplicity or complexity of issues.</p>
+                      <p class="sig-body-text" style="font-size:14px;">I make taking action obvious and easy by applying behavioral science strategies to my work.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="sig-acc-item" style="margin-bottom:28px;">
+                  <button type="button" class="sig-acc-head">
+                    <span class="sig-acc-sign">+ I AM AN ARTIST, CREATOR &amp; STORYTELLER</span>
+                  </button>
+                  <div class="sig-acc-body">
+                    <div style="padding-top:12px;padding-left:26px;">
+                      <p class="sig-body-text" style="font-size:14px;margin-bottom:8px;">I believe in message and design simplicity.</p>
+                      <p class="sig-body-text" style="font-size:14px;margin-bottom:8px;">I create visually beautiful designs and design systems.</p>
+                      <p class="sig-body-text" style="font-size:14px;">I apply traditional and UX/UI design principles to organize content into understandable elements.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="sig-acc-item" style="margin-bottom:28px;">
+                  <button type="button" class="sig-acc-head">
+                    <span class="sig-acc-sign">+ I AM AN EXPLORER AND LEARNER</span>
+                  </button>
+                  <div class="sig-acc-body">
+                    <div style="padding-top:12px;padding-left:26px;">
+                      <p class="sig-body-text" style="font-size:14px;margin-bottom:8px;">I love to learn. I am curious and always look for ways to make things better.</p>
+                      <p class="sig-body-text" style="font-size:14px;">I bring a breadth of unique experiences to every role I hold.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="sig-acc-item" style="margin-bottom:28px;">
+                  <button type="button" class="sig-acc-head">
+                    <span class="sig-acc-sign">+ I AM A LEADER</span>
+                  </button>
+                  <div class="sig-acc-body">
+                    <div style="padding-top:12px;padding-left:26px;">
+                      <p class="sig-body-text" style="font-size:14px;margin-bottom:8px;">I am a listener and meet people where they are.</p>
+                      <p class="sig-body-text" style="font-size:14px;margin-bottom:8px;">I build people up. I strive to bring out the best skills in my team members.</p>
+                      <p class="sig-body-text" style="font-size:14px;">I can laugh at myself. And sometimes others. But mostly myself.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="text-center px-6 py-14 md:py-20">
-                <h3 class="font-semibold text-white mb-3" style="font-size:2.4rem;letter-spacing:.18em;line-height:1.1;">CYDNEY REECE</h3>
-                <div class="text-xs mb-6" style="color:#e8c15a;letter-spacing:.4em;">UX CONSULTING</div>
-                <div class="mx-auto w-16 h-[2px]" style="background:linear-gradient(90deg,#d4a537,#e8c15a);"></div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Stark white section: her pillars -->
-          <div class="px-6 md:px-14 py-10" style="background:#fbfbf9;">
-            <div class="text-center mb-10">
-              <h3 class="font-semibold mb-4" style="color:#3a3a3a;font-size:1.15rem;letter-spacing:.3em;">EXPERIENCE, APPLIED</h3>
-            </div>
-            <div class="space-y-8 max-w-md mx-auto">
-              <div class="pb-6" style="border-bottom:1px solid #e4e4e0;">
-                <div class="text-[10px] font-semibold uppercase mb-2" style="color:#4B4F58;letter-spacing:.25em;">CLARITY FIRST</div>
-                <p class="text-sm font-bold" style="color:#3a3a3a;">I map the problem before I touch the pixels.</p>
-              </div>
-              <div class="pb-6" style="border-bottom:1px solid #e4e4e0;">
-                <div class="text-[10px] font-semibold uppercase mb-2" style="color:#4B4F58;letter-spacing:.25em;">REAL SYSTEMS</div>
-                <p class="text-sm font-bold" style="color:#3a3a3a;">I design systems, not decorations.</p>
-              </div>
-              <div class="pb-6" style="border-bottom:1px solid #e4e4e0;">
-                <div class="text-[10px] font-semibold uppercase mb-2" style="color:#4B4F58;letter-spacing:.25em;">NO DEAD ENDS</div>
-                <p class="text-sm font-bold" style="color:#3a3a3a;">I make the next step obvious.</p>
+              <!-- Footer-style tile strip, thin teal top borders -->
+              <div class="grid grid-cols-2 gap-4 mt-12 max-w-md mx-auto">
+                <div class="text-center py-4" style="border-top:1px solid #1d6a63;">
+                  <span class="sig-tile-label">Curriculum Vitae</span>
+                </div>
+                <div class="text-center py-4" style="border-top:1px solid #1d6a63;">
+                  <span class="sig-tile-label">Portfolio</span>
+                </div>
               </div>
             </div>
 
-            <!-- Service strip: thin #0170B9 top borders -->
-            <div class="grid grid-cols-3 gap-4 mt-10">
-              <div class="rounded-lg p-4" style="background:#fff;border-top:2px solid #0170B9;box-shadow:0 1px 2px rgba(0,0,0,.04);">
-                <div class="text-[10px] font-semibold uppercase tracking-wider" style="color:#3a3a3a;">UX AUDIT</div>
-              </div>
-              <div class="rounded-lg p-4" style="background:#fff;border-top:2px solid #0170B9;box-shadow:0 1px 2px rgba(0,0,0,.04);">
-                <div class="text-[10px] font-semibold uppercase tracking-wider" style="color:#3a3a3a;">DESIGN SYSTEMS</div>
-              </div>
-              <div class="rounded-lg p-4" style="background:#fff;border-top:2px solid #0170B9;box-shadow:0 1px 2px rgba(0,0,0,.04);">
-                <div class="text-[10px] font-semibold uppercase tracking-wider" style="color:#3a3a3a;">PRODUCT THINKING</div>
-              </div>
+            <!-- Minimal footer on linen -->
+            <div class="text-center px-6 py-6" style="background:#e9e3d9;border-top:1px solid rgba(29,106,99,.18);">
+              <p class="sig-body-text" style="font-size:11px;letter-spacing:.08em;">
+                913-488-8134 &nbsp;&middot;&nbsp; cydneyreece@gmail.com &nbsp;&middot;&nbsp;
+                <i class="fab fa-facebook-f" style="font-size:10px;"></i> <i class="fab fa-linkedin-in" style="font-size:10px;"></i>
+                &nbsp;&middot;&nbsp; &copy; 2026 Cydney Reece
+              </p>
             </div>
           </div>
-
-          <!-- Closing band -->
-          <div class="text-center px-6 py-10" style="background:#F5F5F5;">
-            <div class="font-semibold mb-5" style="color:#3a3a3a;font-size:1.1rem;letter-spacing:.25em;">LET'S MAKE IT OBVIOUS.</div>
-            <div class="inline-block px-5 py-2 text-xs font-semibold" style="color:#0170B9;border:1px solid #0170B9;border-radius:2px;">Book the look call</div>
-          </div>
+          <script>
+            (function() {
+              var root = document.getElementById('sigAcc');
+              if (!root) return;
+              var items = Array.prototype.slice.call(root.querySelectorAll('.sig-acc-item'));
+              function setOpen(item, open) {
+                item.classList.toggle('open', open);
+                var sign = item.querySelector('.sig-acc-sign');
+                if (!sign) return;
+                var label = sign.textContent.replace(/^\u2212\s*/, '').replace(/^\+\s*/, '');
+                sign.textContent = (open ? '\u2212 ' : '+ ') + label;
+              }
+              items.forEach(function(item) {
+                var head = item.querySelector('.sig-acc-head');
+                if (!head) return;
+                head.addEventListener('click', function() {
+                  var isOpen = item.classList.contains('open');
+                  items.forEach(function(other) { setOpen(other, false); });
+                  if (!isOpen) { setOpen(item, true); }
+                });
+              });
+              items.forEach(function(item) { setOpen(item, item.classList.contains('open')); });
+            })();
+          </script>
         </div>
       </div>
 
@@ -706,14 +802,14 @@
         <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
           <div class="flex-shrink-0">
             <h3 class="text-xl font-bold mb-1">Signature</h3>
-            <span class="text-xs bg-amber-500/10 text-amber-300 px-3 py-1 rounded-full font-semibold">Her way, reworked</span>
+            <span class="text-xs bg-amber-500/10 text-amber-300 px-3 py-1 rounded-full font-semibold">her style, near-identical</span>
           </div>
           <div class="flex-1">
             <div class="text-xs text-slate-500 font-semibold mb-2 uppercase tracking-wider">Best for</div>
             <ul class="text-sm text-slate-300 space-y-1">
-              <li><i class="fas fa-check text-green-400 mr-2"></i>Keeps her artist's identity at the center</li>
-              <li><i class="fas fa-check text-green-400 mr-2"></i>Zero gravy. Pure Cydney.</li>
-              <li><i class="fas fa-check text-green-400 mr-2"></i>Client-facing polish without a platform swap</li>
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Her real look and feel, reproduced</li>
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Consulting content fitted to her voice</li>
+              <li><i class="fas fa-check text-green-400 mr-2"></i>Launch-ready without a platform swap</li>
             </ul>
           </div>
         </div>
